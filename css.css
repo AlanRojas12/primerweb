@@ -1,0 +1,280 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-image: url(http://www.novatecnica.com.ar/concrete/themes/elemental/images/background-slider-night-road.png);
+	background-attachment: fixed;	
+	scroll-behavior: smooth;
+}
+
+/*ACA MODIFICO EL GRID TEMPLATE*/
+
+							.grid-conteiner {
+								display: grid;
+								grid-template: 
+								"menu" auto	
+								"contenido-1" 46vh
+								"subtitulo" auto
+								"cartas" 60vh
+								"servicios" 50vh
+								"footer" 100vh; 
+							}	
+
+/* aca modifico el header */
+
+.menu {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	height: 75px;
+	width: 100vw;
+	align-items: center;
+	border-bottom: 1px solid #fff;
+	box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
+	opacity: .5;
+  background-color: rgb(0, 0, 0);
+	grid-area: menu;
+}
+
+
+.logo {
+	color: #fff;
+	font-size: 35px;
+	padding: 0 80px;
+	font-weight: bold;
+}
+
+
+.menu_items {
+	display: flex;
+	list-style: none;
+	margin-right: 30px;
+}
+
+
+.menu_items li {
+	border-radius: 3px;
+	margin: 0 5px;
+}
+
+.menu_items li a {
+	padding: 7px 13px;
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.menu_items li:hover{
+	background-color: white;
+	transition: .4s;
+}
+.menu_items li a:hover {
+	color: #000;
+}
+
+.btn_menu {
+	margin-right: 30px;
+	font-size: 25px;
+	cursor: pointer;
+	display: none;
+
+}
+
+
+ul.show {
+	top: 65px;
+}
+
+/*CONTENIDO PRINCIPAL*/
+
+
+.contenido-1 {
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-area: contenido-1;
+}
+
+.contenido-1 h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+}
+
+/*SUBTITULO*/
+
+.subtitulo {
+	
+	display: flex;
+	grid-area: subtitulo;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+}
+
+.subtitulo p {
+	text-align: center;
+	color: #fff;
+}
+
+
+/*CARTAS*/
+
+.cartas {
+	
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+	width: 60vw;
+	margin: auto;
+
+	grid-area: cartas;
+}
+
+.cartas > * {
+	text-align: center;
+}
+
+.cartas p {
+	font-size: 30px;
+}
+
+/*CARTA1*/
+
+.carta1 {
+	
+}
+
+
+section div p {
+	color: white;
+}
+
+
+/*SERVICIOS*/
+
+.servicios {
+	display: flex;
+	border: 1px solid red;
+	grid-area: servicios;
+	background-color: #000;
+}
+
+.servicios > * {
+	padding: 15px;
+}
+
+.fondo1 {
+	background-color: #DCDCDC;
+	width: 400px;
+	height: 200px;
+}
+
+.fondo2 {
+	background-color: #ADADAD;
+	width: 400px;
+	height: 200px;
+}
+
+
+/*FOOTER*/
+
+.footer {
+	grid-area: footer;
+}
+
+/*MEDIA QUERY PARA EL RESPONSIVE*/
+@media screen and (max-width: 952px) {
+	.logo {
+		font-size: 30px;
+		padding-left: 35px;
+	}
+
+	.menu_items li a {
+		font-size: 16px;
+	}
+
+	.contenido-1  h1 {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 858px){
+	.menu {
+		height: 65px;
+		opacity: inherit;
+	}
+
+	.btn_menu {
+		display: inline-flex;
+		
+		border-left: 1px solid white;
+		padding: 5px;
+	}
+
+	.menu_items {
+		position: fixed;
+		width: 100vw;
+		height: calc(100% - 65px);
+		background: #414141;
+		top: -100vh;
+		text-align: center;
+		transition: all .4s;
+		flex-direction: column;
+	}
+
+	.menu_items li {
+		margin: 30px 0 0 0;
+		line-height: 30px;
+	}
+
+	.menu_items li:hover {
+		background: none;
+	}
+
+	.menu_items li a {
+		font-size: 20px;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	.menu_items li a:hover {
+		color: #000;
+	}
+
+	.logo {
+		font-size: 25px;
+		padding-left: 35px;
+	}
+
+	.contenido-1  h1 {
+		font-size: 30px;
+	}
+}
+
+
+
+
+@media screen and (max-width:  858px) and (orientation: landscape){
+	.menu_items li {
+		margin: 5px 0 0 0;
+	}
+
+	.menu_items{
+		overflow: scroll;
+		height: calc(100% - 65px);
+	}
+}
+
+
