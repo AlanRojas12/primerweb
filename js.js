@@ -1,4 +1,6 @@
-function showmenu() {
-  document.getElementById("otroModo").classList.toggle("show");
+  function despliegue() {                                           //despliego el menu flotante.
+  document.getElementById("menuFlotante").classList.toggle("show");
 }
+
+
 

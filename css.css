@@ -2,66 +2,55 @@
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
+	box-sizing: border-box;
 }
 
-html {
-	scroll-behavior: smooth;
-}
+
+
 
 body {
-	background-image: url(http://www.novatecnica.com.ar/concrete/themes/elemental/images/background-slider-night-road.png);
-	background-attachment: fixed;	
-	scroll-behavior: smooth;
+	background-image: url(imagenes/image.png);
+	background-size: cover;
+	background-attachment: fixed;
+
 }
 
-/*ACA MODIFICO EL GRID TEMPLATE*/
+.grid-conteiner {
+	display: grid;
+	grid-template:
+	"menu" 
+	"primer-contenido" 100vh
+	"relleno"100vh
+	"footer"40vh
+	;
+}
 
-							.grid-conteiner {
-								display: grid;
-								grid-template: 
-								"menu" auto	
-								"contenido-1" 46vh
-								"subtitulo" auto
-								"cartas" 60vh
-								"servicios" 50vh
-								"footer" 100vh; 
-							}	
+
 
 /* aca modifico el header */
 
 .menu {
-	position: fixed;
 	display: flex;
-	justify-content: space-between;
-	height: 75px;
-	width: 100vw;
 	align-items: center;
-	border-bottom: 1px solid #fff;
-	box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
-	opacity: .5;
-  background-color: rgb(0, 0, 0);
+    left:0;
+    right:0;
+	position: fixed;
+	height: 10vh;
+	box-shadow: 5px 0 10px #636363;
+   
 	grid-area: menu;
+
 }
-
-
-.logo {
-	color: #fff;
-	font-size: 35px;
-	padding: 0 80px;
-	font-weight: bold;
-}
-
 
 .menu_items {
 	display: flex;
 	list-style: none;
-	margin-right: 30px;
+	margin-left: 35px;
 }
-
 
 .menu_items li {
 	border-radius: 3px;
-	margin: 0 5px;
+	margin: 0 0px;
 }
 
 .menu_items li a {
@@ -77,122 +66,47 @@ body {
 	background-color: white;
 	transition: .4s;
 }
+
 .menu_items li a:hover {
 	color: #000;
 }
 
 .btn_menu {
-	margin-right: 30px;
-	font-size: 25px;
 	cursor: pointer;
 	display: none;
-
 }
-
 
 ul.show {
 	top: 65px;
 }
 
-/*CONTENIDO PRINCIPAL*/
+/*CONTENIDO-1*/
 
-
-.contenido-1 {
-	
+.primer-contenido {
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	grid-area: contenido-1;
-}
-
-.contenido-1 h1 {
-	color: #fff;
-	text-align: center;
-	font-size: 50px;
-}
-
-/*SUBTITULO*/
-
-.subtitulo {
+	align-items: center;
+	grid-area: primer-contenido;
 	
-	display: flex;
-	grid-area: subtitulo;
-	align-items: center;
-	justify-content: center;
-	font-size: 50px;
 }
 
-.subtitulo p {
+.primer-contenido p {
 	text-align: center;
 	color: #fff;
+	font-size: 90px;
+	padding: 50px;
+	border: 1px solid white;
 }
 
-
-/*CARTAS*/
-
-.cartas {
-	
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	
-	width: 60vw;
-	margin: auto;
-
-	grid-area: cartas;
+.relleno {
+	grid-area: relleno;
+	background-color: #A2A2A2;
 }
-
-.cartas > * {
-	text-align: center;
-}
-
-.cartas p {
-	font-size: 30px;
-}
-
-/*CARTA1*/
-
-.carta1 {
-	
-}
-
-
-section div p {
-	color: white;
-}
-
-
-/*SERVICIOS*/
-
-.servicios {
-	display: flex;
-	border: 1px solid red;
-	grid-area: servicios;
-	background-color: #000;
-}
-
-.servicios > * {
-	padding: 15px;
-}
-
-.fondo1 {
-	background-color: #DCDCDC;
-	width: 400px;
-	height: 200px;
-}
-
-.fondo2 {
-	background-color: #ADADAD;
-	width: 400px;
-	height: 200px;
-}
-
-
-/*FOOTER*/
 
 .footer {
 	grid-area: footer;
 }
+
 
 /*MEDIA QUERY PARA EL RESPONSIVE*/
 @media screen and (max-width: 952px) {
@@ -205,24 +119,29 @@ section div p {
 		font-size: 16px;
 	}
 
-	.contenido-1  h1 {
-		font-size: 40px;
+	.primer-contenido p {
+		font-size: 60px;
 	}
 }
-
 @media screen and (max-width: 858px){
+	
+	body {
+		background-position: center center;
+	}
+
 	.menu {
 		height: 65px;
 		opacity: inherit;
+		display: flex;
 	}
 
 	.btn_menu {
 		display: inline-flex;
 		
-		border-left: 1px solid white;
-		padding: 5px;
+		border-right: 2px solid white;
+		margin-left: 15px;
 	}
-
+	
 	.menu_items {
 		position: fixed;
 		width: 100vw;
@@ -232,6 +151,7 @@ section div p {
 		text-align: center;
 		transition: all .4s;
 		flex-direction: column;
+		margin-left: 0;
 	}
 
 	.menu_items li {
@@ -257,10 +177,6 @@ section div p {
 		font-size: 25px;
 		padding-left: 35px;
 	}
-
-	.contenido-1  h1 {
-		font-size: 30px;
-	}
 }
 
 
@@ -276,5 +192,3 @@ section div p {
 		height: calc(100% - 65px);
 	}
 }
-
-
